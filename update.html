@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>update Student</title>
+    <style>
+        body{
+        background-color:#f0f8ff;
+        font-family:Arial,sans-serif;
+        }
+        .container{
+        width:50%;
+        margin:0 auto;
+        padding:20px;
+        background-color:#fff;
+        border-radius:8px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        form{
+        dispaly:flex;
+        flex-direction:column;
+        }
+        label{
+        margin-top:10px;
+        }
+        input{
+        padding:8px;
+        margin-top:5px;
+        border:1px solid #ddd;
+        border-radius:4px;
+        }
+        button{
+        margin-top:20px;
+        padding:10px;
+        background-color:#4CAF50;
+        color:white;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+        }
+        button:hover{
+        background-color:#45a049;
+        }
+
+    </style>
+</head>
+<body>
+<div class="containrt">
+    <h1>Update Student</h1>
+    <form action="/saveStudent"th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name</label>
+            <input type="text"th:field="*{name}"/>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" th:field="*{email}"/>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+
+</body>
+</html>
